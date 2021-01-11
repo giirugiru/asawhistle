@@ -36,7 +36,6 @@ Code here
 ### Variables
 Variable name should be in English, with exceptions of some Indonesian words that may cause confusion when translated to english/the name itself is a part of the feature name. Discuss with other devs about this issue.
 
-Avoid shortening variable names, always aim for readability.
 
 **Good** 
 ``` Swift
@@ -60,6 +59,21 @@ Name outlets with name+type
 @IBOutlet weak var transactionHistoryTableView: UITableView!
 @IBOutlet weak var passengerNamelabel: UILabel!
 @IBOutlet weak var passportImage: UIImage!
+```
+
+### Abbreviations
+Avoid using abbreviations or shortening the variable name. Spell them out even if they are long. With exceptions of abbreviations that are commonly used. For example `handphone -> HP` , `Identifier -> ID`, etc. But prioritize spelling them out.
+
+**Good**
+```
+var phoneNumber = ""
+var backgroundImage = ""
+```
+
+**Bad**
+```
+var phoneNum = ""
+var bgImg = ""
 ```
 
 
