@@ -5,13 +5,13 @@ Because short codes are great, but readable codes are better.
 
 
 ## Source File Basics
-All Swift source file should end with .swift. The naming format should be name+type.swift. Naming format should use PascalCase. For example: `HomeViewController.swift`. Before creating a new file, please check all existing file name on the project that may cause ambiguosity to the name of your new file, then change your new file name accordingly.
+All Swift source file should end with _.swift_. The naming format should be _name+type.swift_. Naming format should use PascalCase. For example: `HomeViewController.swift`. Before creating a new file, please check all existing file name on the project that may cause ambiguosity to the name of your new file, then change your new file name accordingly.
 
 ### Language
 File name language should be in English, with exceptions of some Indonesian words that may cause confusion when translated to english/the name itself is a part of the feature name. Discuss with other devs about this issue.
 
 ### Abbreviations
-Do not use abbreviations (like ViewController -> VC) to avoid confusion. As an example if we have `TableViewCell` and `TableViewController`, both of them would be shortened to `TVC` which is ambiguous and not good.
+Do not use abbreviations (like _ViewController_ -> _VC_) to avoid confusion. As an example if we have `TableViewCell` and `TableViewController`, both of them would be shortened to `TVC` which is ambiguous and not good.
 
 **Good Example**
 
@@ -19,7 +19,7 @@ Do not use abbreviations (like ViewController -> VC) to avoid confusion. As an e
 
 **Bad Example**
 
-`HomeVC.swift`, `HistoryTableVC.swift` (Unclear wether it is ViewController or ViewCell), `PurchasedItemsCell.swift` (Unclear wether it is a CollectionViewCell or TableViewCell)
+`HomeVC.swift`, `HistoryTableVC.swift` (Unclear wether it is _ViewController_ or _ViewCell_), `PurchasedItemsCell.swift` (Unclear wether it is a _CollectionViewCell_ or _TableViewCell_)
 
 
 ## Code Formatting
@@ -39,7 +39,7 @@ Code here
 Naming should be in English, with exceptions of some Indonesian words that may cause confusion when translated to english/the name itself is a part of the feature name. Discuss with other devs about this issue.
 
 ### Abbreviations
-Avoid using abbreviations or shortening. Spell them out even if they are long. With exceptions of abbreviations that are commonly used. For example `handphone -> HP` , `Identifier -> ID`, etc. But prioritize spelling them out.
+Avoid using abbreviations or shortening. Spell them out even if they are long. With exceptions of abbreviations that are commonly used, for example _handphone_ -> _HP_ , _Identifier_ -> _ID_, etc. But always prioritize spelling them out.
 
 **Good Example**
 ```
@@ -57,6 +57,7 @@ var bgImg = "apple.jpg"
 
 ### Variables
 No need to specify data types if it can be easily identified, unless it is necessary.
+
 **Example**
 ``` swift
 var name: String = "Kevin"
@@ -86,10 +87,12 @@ var blood = "AB"
 These are not particularly bad, but it is highly suggested to have detailed variable names.
 
 ### Outlets
-Name outlets with name+type. For example:
+Name outlets with _name+type_.
+
+**Example**
 ``` swift
 @IBOutlet weak var transactionHistoryTableView: UITableView!
-@IBOutlet weak var passengerNamelabel: UILabel!
+@IBOutlet weak var passengerNameLabel: UILabel!
 @IBOutlet weak var passportImage: UIImage!
 ```
 
@@ -128,6 +131,7 @@ else
 
 ### Colons
 Colons should always have one trailing space but no leading space.
+
 **Example**
 ``` swift
 var heroes: [Hero] = []
@@ -135,6 +139,7 @@ var heroes: [Hero] = []
 
 ### Operators
 Operators should always have one leading and trailing space.
+
 **Example**
 ``` swift
 name = "Kevin"
