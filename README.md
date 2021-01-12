@@ -8,7 +8,7 @@ Because short codes are great, but readable codes are better.
 All Swift source file should end with _.swift_. The naming format should be _name+type.swift_. Naming format should use PascalCase. For example: `HomeViewController.swift`. Before creating a new file, please check all existing file name on the project that may cause ambiguosity to the name of your new file, then change your new file name accordingly.
 
 ### Language
-File name language should be in English, with exceptions of some Indonesian words that may cause confusion when translated to english/the name itself is a part of the feature name. Discuss with other devs about this issue.
+File name language should be in English, with exceptions of some Indonesian words that may cause confusion when translated to English/the name itself is a part of the feature name. Discuss with other devs about this issue.
 
 ### Abbreviations
 Do not use abbreviations (like _ViewController_ -> _VC_) to avoid confusion. As an example if we have `TableViewCell` and `TableViewController`, both of them would be shortened to `TVC` which is ambiguous and not good.
@@ -36,7 +36,7 @@ Code here
 ```
 
 ### Language
-Naming should be in English, with exceptions of some Indonesian words that may cause confusion when translated to english/the name itself is a part of the feature name. Discuss with other devs about this issue.
+Naming should be in English, with exceptions of some Indonesian words that may cause confusion when translated to English/the name itself is a part of the feature name. Discuss with other devs about this issue.
 
 ### Abbreviations
 Avoid using abbreviations or shortening. Spell them out even if they are long. With exceptions of abbreviations that are commonly used, for example _handphone_ -> _HP_ , _Identifier_ -> _ID_, etc. But always prioritize spelling them out.
@@ -58,7 +58,7 @@ var bgImg = "apple.jpg"
 ### Variables
 No need to specify data types if it can be easily identified, unless it is necessary.
 
-**Example**
+**From**
 ``` swift
 var name: String = "Kevin"
 ```
@@ -150,7 +150,109 @@ if name == "Kevin" && age < 17 {
 }
 ```
 
+### Tuple, Array, Dictionary literals
+Add trailing whitespace after comma. Parameter lists also applies this rule.
 
+**Good Example**
+``` swift
+let numbers = [1, 2, 3]
+```
+
+**Bad Example**
+``` swift
+let numbers = [1,2,3]
+let moreNumbers = [1 , 2 , 3]
+```
+
+
+
+### Functions
+You don't need to specify the return type if the return value is void.
+
+**From**
+``` swift
+func fetchData() -> Void {
+
+}
+```
+**To**
+``` swift
+func fetchData(){
+
+}
+
+```
+
+If you have multiple parameters, you can put each parameter on a new line for better readability.
+
+**Example**
+``` swift
+func getRecord(
+  patientName: String,
+  patientDOB: String,
+  patientAge: Int,
+  patientBloodType: String,
+  treatmentType: String,
+  treatmentDate: String
+){
+
+}
+```
+
+## Code Organizing
+There is no correct order of types, variables, functions, and any other components in a source file. Order may vary regardless of the content itself. What important is that each file and type uses some logical order which can be easily explained and understandable by the developers. Avoid "Chronological by date added" ordering. Instead, use `// MARK:` or `// MARK: -` comments to provide descriptions for that order or code grouping.
+
+**Example**
+``` swift
+class MovieRatingViewController: UITableViewController {
+
+  // MARK: - View controller lifecycle methods
+
+  override func viewDidLoad() {
+    // ...
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    // ...
+  }
+
+  // MARK: - Movie rating manipulation methods
+
+  @objc private func ratingStarWasTapped(_ sender: UIButton?) {
+    // ...
+  }
+
+  @objc private func criticReviewWasTapped(_ sender: UIButton?) {
+    // ...
+  }
+}
+```
+
+### Protocols
+
+**From**
+``` swift
+class MyViewController: UIViewController, UITableViewDataSource, UIScrollViewDelegate {
+  // all methods
+}
+```
+
+**To**
+``` swift
+class MyViewController: UIViewController {
+  // class stuff here
+}
+ 
+// MARK: - UITableViewDataSource
+extension MyViewController: UITableViewDataSource {
+  // table view data source methods
+}
+ 
+// MARK: - UIScrollViewDelegate
+extension MyViewController: UIScrollViewDelegate {
+  // scroll view delegate methods
+}
+```
 
 
 
